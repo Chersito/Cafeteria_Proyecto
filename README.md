@@ -39,7 +39,7 @@ El objetivo principal de este sistema es facilitar la administración de la cafe
 - **Dependencias**: 
   - `Django` (Backend)
   - `SQLite` (Base de datos)
-  - `JavaScript` (Funcionalidades interactivas) 
+  - `JS` (Frontend)
 
 ## Instalación
 
