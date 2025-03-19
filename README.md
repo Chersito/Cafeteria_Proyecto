@@ -46,6 +46,6 @@ El objetivo principal de este sistema es facilitar la administración de la cafe
  Clona el repositorio:
 
 ```bash
-   git clone https://github.com/Chersito/Cafeteria_System.git
+   git https://github.com/Chersito/Cafeteria_Proyecto.git
 ```
 

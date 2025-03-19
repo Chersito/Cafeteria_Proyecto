@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Lista de Pedidos</h1>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in pedidos %}
+                <!-- Recorremos los detalles de cada pedido -->
+                {% for detalle in pedido.detallepedido_set.all %}
+                <tr>
+                    <td>{{ pedido.id }}</td>
+                    <td>{{ pedido.usuario.username }}</td> <!-- Cliente -->
+                    <td>{{ detalle.producto.nombre }}</td> <!-- Producto -->
+                    <td>{{ detalle.cantidad }}</td> <!-- Cantidad -->
+                    <td>
+                        <span class="badge {% if pedido.estado == 'pendiente' %}bg-warning
+                                       {% elif pedido.estado == 'preparado' %}bg-info
+                                       {% else %}bg-success{% endif %}">
+                            {{ pedido.estado }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'menu_inicio' %}" class="btn btn-secondary">Volver al Menú</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

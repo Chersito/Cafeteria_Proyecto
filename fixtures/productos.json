@@ -1,0 +1,22 @@
+[
+  {
+    "model": "cafeteria.producto",
+    "pk": 1,
+    "fields": {
+      "nombre": "Latte",
+      "descripcion": "Café con leche",
+      "precio": 35.00,
+      "disponible": true
+    }
+  },
+  {
+    "model": "cafeteria.producto",
+    "pk": 2,
+    "fields": {
+      "nombre": "Té Chai",
+      "descripcion": "Té con especias y leche",
+      "precio": 28.00,
+      "disponible": true
+    }
+  }
+]
